@@ -1,0 +1,38 @@
+<html><body><p>25-26 октября состоялся [HighLoad-2010](http://highload.ru/), конференция получилось хорошей хотя бы потому, что было мало докладов ни о чем. Неплохой уровень, особенно было приятно увидеть "профессоров" PostgreSQL.
+
+
+Я выступал с докладом "Приемы разработки высоконагруженных приложений на Twisted/Python". В докладе получилась (вполне сознательно) сборная солянка из советов и приемов о том, как писать приложения на Twisted (и похожих frameworkах). Из-за большого количества разных тем не получилось углубиться ни в одну, каюсь...
+
+
+
+Тезисы:
+
+
+ 1. Запуск и шедулинг многих однопоточных процессов на одном сервере.
+ 2. Key-value storage и приемы работы с ним.
+ 3. Обслуживание сотен тысяч соединений на одном сервере.
+ 4. HTTP-сервисы и балансировка нагрузки, локализация нагрузки.
+ 5. Сбор статистики, интеграция с системой мониторинга.
+ 6. Шина обмена сообщениями на примере AMQP.
+ 7. Поиск и устранение memory leak.
+ 8. Оптимизация по времени отклика и пропускной способности.
+ 9. Мифы и правда о Python как языке разработки нагруженных приложений.
+
+
+Презентация:
+
+
+
+</p><div style="width:425px" id="__ss_5589368"><object id="__sse5589368" width="600" height="501"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=smirnov-twisted-python-101027232646-phpapp01&amp;stripped_title=smirnov-twistedpython&amp;userName=Smirnov.Andrey"><param name="allowFullScreen" value="true"><param name="allowScriptAccess" value="always"><embed name="__sse5589368" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=smirnov-twisted-python-101027232646-phpapp01&amp;stripped_title=smirnov-twistedpython&amp;userName=Smirnov.Andrey" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="600" height="501"></embed></object></div>
+
+
+
+<br><br>
+
+
+
+Утащить:
+
+
+ * В формате [PDF](http://www.smira.ru/wp-content/uploads/2010/10/smirnov-twisted-python.pdf)
+ * Модуль [py-numа](http://github.com/smira/py-numa), который упоминался в докладе</body></html>

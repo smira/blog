@@ -1,0 +1,34 @@
+<html><body><p>Чудесная возможность Vim'а! Да поможет она повышению грамотности наших разработчиков. Проверка орфографии умная, понимает, что именно в исходном файле стоит проверять (например, комментарии), а что не стоит (например, ключевые слова).
+
+
+Итак:
+
+
+  1. Качаем [отсюда](http://wiki.services.openoffice.org/wiki/Dictionaries#Russian_.28Russia.29)
+словарь: [http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/dictionaries/ru_RU.zip](http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/dictionaries/ru_RU.zip)
+  2. Раскрываем архив в папку `/tmp/dict`.
+  3. `mkdir -p ~/.vim/spell/`
+
+
+Запускаем Vim, делаем:
+
+
+    :mkspell! ~/.vim/spell/ru /tmp/dict/ru_RU
+
+
+Вуаля! Словарь готов! (Всё описанное выше - подготовительный этап, это надо сделать всего один раз).
+
+
+
+
+
+Включение проверки на русском и английском (для текущего буфера):
+
+
+    :setlocal spell spelllang=ru_ru,en_us
+
+
+Дополнительно о проверке орфографии:
+
+
+    :help spell</p></body></html>

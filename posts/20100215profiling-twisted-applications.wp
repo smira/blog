@@ -1,0 +1,36 @@
+<html><body><a href="/wp-content/uploads/2010/02/kcachegrind.png"><img src="http://www.smira.ru/wp-content/uploads/2010/02/kcachegrind-300x182.png" alt="" title="kcachegrind" width="300" height="182" class="alignleft size-medium wp-image-534"></a> Часто сам забываю, как профилировать легко и быстро Twisted-приложения (с некоторым изменениями подойдет для любых Python-приложений). Кроме Twisted нам понадобится еще [KCachegrind](http://kcachegrind.sourceforge.net/)
+
+
+Запускаем наше приложение с включенным профайлингом:
+
+
+
+<pre>
+
+twistd -n --savestats --profile=myprog.hotshot myprog
+
+</pre>
+
+
+
+Подаем нагрузку, профайл собирается. Теперь с помощью утилиты `hotshot2cg` из поставки KCachegrind превращаем hotshot-профайл в calltree-профайл, который уже умеет KCachegrind "кушать".
+
+
+
+<pre>
+
+hotshot2cg myprog.hotshot &gt; myprog.calltree
+
+</pre>
+
+
+
+Запускаем KCachegrind, открываем в нем полученный профайл:
+
+
+
+<pre>
+
+kcachegrind myprog.calltree
+
+</pre></body></html>

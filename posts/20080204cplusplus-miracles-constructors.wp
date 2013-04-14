@@ -1,0 +1,103 @@
+<html><body><p>Что происходит, когда мы пишем `A a(3)`, `A a = 3` и `A a = A(3)`? Меня этот вопрос давно интересовал. Конечно, у класса должны быть корректные конструкторы, в том числе и копирования, операторы присваивания и т.п.
+
+
+Проведем следственный эксперимент...
+
+
+    #include <stdio.h>
+
+    class A
+    {
+        public:
+        A() 
+        {
+            printf("A::A()\n");
+        }
+
+        A(int) 
+        {
+            printf("A::A(int)\n");
+        }
+
+        A(int, int) 
+        {
+            printf("A::A(int, int)\n");
+        }
+
+        A(const A&amp; a) 
+        {
+            printf("A::A(const A&amp; a)\n");
+        }
+
+        void operator=(const A&amp; a) 
+        {
+            printf("A::operator=(const A&amp; a)\n");
+        }
+    };
+
+    int main()
+    {
+        printf("=&gt; A a1;\n");
+        A a1;
+        printf("=&gt; A a2(3);\n");
+        A a2(3);
+        printf("=&gt; A a3;\n");
+        A a3 = 3;
+        printf("=&gt; A a4 = A(3);\n");
+        A a4 = A(3);
+        printf("=&gt; A a5; a5 = A(3);\n");
+        A a5; a5 = A(3);
+        printf("=&gt; A a6(a1);\n");
+        A a6(a1);
+        printf("=&gt; A a7(4,4);\n");
+        A a7(4, 4);
+        printf("=&gt; A a8 = A(4,4);\n");
+        A a8 = A(4, 4);
+        return 0;
+    }
+
+
+Выведет на экран:
+
+
+    =&gt; A a1;
+    A::A()
+    =&gt; A a2(3);
+    A::A(int)
+    =&gt; A a3;
+    A::A(int)
+    =&gt; A a4 = A(3);
+    A::A(int)
+    =&gt; A a5; a5 = A(3);
+    A::A()
+    A::A(int)
+    A::operator=(const A&amp; a)
+    =&gt; A a6(a1);
+    A::A(const A&amp; a)
+    =&gt; A a7(4,4);
+    A::A(int, int)
+    =&gt; A a8 = A(4,4);
+    A::A(int, int)
+
+
+Т.е. каждый раз вызывается обычный конструктор и все три формы, приведённые в начале поста, эквивалентны.
+
+
+
+Однако стоит нам конструктор копирования объявить `private`, и сразу же получим вот это:
+
+
+    [smir@smira Teaching]$ g++ test.cxx 
+    test.cxx: In function ‘int main()’:
+    test.cxx:22: ошибка: ‘A::A(const A&amp;)’ is private
+    test.cxx:39: ошибка: в данном контексте
+    test.cxx:22: ошибка: ‘A::A(const A&amp;)’ is private
+    test.cxx:39: ошибка: в данном контексте
+    test.cxx:39: ошибка:   initializing temporary from result of ‘A::A(int)’
+    test.cxx:22: ошибка: ‘A::A(const A&amp;)’ is private
+    test.cxx:41: ошибка: в данном контексте
+    test.cxx:22: ошибка: ‘A::A(const A&amp;)’ is private
+    test.cxx:41: ошибка: в данном контексте
+
+
+Строка 22 - это объявление конструктора копирования, а 39 и 41 это обращения `A a3 = 3` и  `A a4 = A(3);`. Интересно получается, что хотя конструктор копирования и не вызывается, но эти формы требуют его открытости. Это стандарт C++, оптимизация gcc или что-то ещё?</stdio.h></p></body></html>

@@ -1,0 +1,16 @@
+<html><body><p>Может, это кому-то поможет сохранить пару часов отладки. Когда читаем видеопоток из файла, делаем что-то наподобие следующего:
+
+    AVPacket *m_pPacket = (AVPacket *)malloc(sizeof(AVPacket))
+    while(1)
+    {
+         int ret = av_read_frame(formatCtx, m_pPacket);
+
+         if (ret 
+
+
+    AVPacket *m_pPacket = (AVPacket *)malloc(sizeof(AVPacket))
+    while(1)
+    {
+         int ret = av_read_frame(formatCtx, m_pPacket);
+
+         if (ret </p></body></html>

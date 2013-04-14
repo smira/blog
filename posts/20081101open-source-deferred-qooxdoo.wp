@@ -1,0 +1,56 @@
+<html><body><p>[Мы](http://netstream.ru) представляем начало нашего маленького [проекта](http://code.netstream.ru) по выкладыванию в open-source исходного кода наших проектов (полностью или частично). Первой ласточкой становится маленькая библиотека, предназначенная для работы с [Deferred](http://twistedmatrix.com/projects/core/documentation/howto/defer.html) из [Twisted Framework](http://twistedmatrix.com/) в [qooxdoo](http://qooxdoo.org/) на JavaScript.
+
+
+Практически полностью код был взят из [MochiKit.Async](http://mochikit.com/doc/html/MochiKit/Async.html) и адаптирован под qooxdoo. Полезные нововедения: если если в течение 1 секунды не будет обработана ошибка в Deferred (выполнение дойдет до конца цепочки callback, и останется ошибка), о ней будет сообщено на консоль, как о возможно необработанном исключении. 
+
+
+
+Если Вы еще не знаете, что такое Deferred, я бы рекомендовал обратиться к [Twisted Handbook](http://twistedmatrix.com/projects/core/documentation/howto/index.html). Со своей стороны обещаю как можно скорее написать о Deferred по-русски.
+
+
+
+Итак, страничка [qx.Deferred](http://code.netstream.ru/wiki/QooxdooTwistedDeferred).
+
+
+
+<!--more-->
+
+
+
+Пример кода:
+
+</p><pre lang="javascript" line="1">
+
+function callRPC(method, params)
+
+{
+    this.debug("API: call " + method + " with params: ");
+    this.debug(params);
+    var d = new netstream.lib.Deferred();
+
+    var rpc = new qx.io.remote.Rpc();
+    rpc.setTimeout(10000);
+    rpc.setUrl(this.__api_url);
+    rpc.callAsync(
+        function (result, ex, id)
+        {
+            if (ex == null)
+                d.callback(result);
+            else
+                d.errback(ex);
+        },
+        method, params);
+
+    var that = this;
+    d.addCallback(function (result) { that.debug("API: result:"); that.debug(result); return result; });
+    d.addErrback(function (ex) { that.error(ex); return ex; });
+    return d;
+};
+
+
+
+d = callRPC("somemethod", { 'someParams' });
+
+d.addCallback(function (result) { alert("Got result: "+result); });
+
+</pre></body></html>

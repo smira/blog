@@ -1,0 +1,77 @@
+<html><body><p>Итак, HighLoad++ состоялся. Если говорить кратко, конференция мне понравилась. Ниже мои личные впечатления о конференции, краткие тезисы доклада и презентация. 
+
+
+Текст доклада дописываю, есть мечта к концу недели это доделать (сейчас готова ровно половина). Тогда же текст опубликую, возможно в серии отдельных постов и в виде одной большой PDF-ки тут.
+
+
+
+## Мои впечатления о конференции
+
+
+
+Итак, мне понравилось. Интересные доклады - много интересных докладов. Жалко, что не было
+
+Яндекса - они делают хорошие доклады. В первый день была проблема поесть и попить, но ко второму дню ситуация как-то улучшилась. Народу чуть-чуть больше, чем хотелось бы (иногда в аудиторию к докладчику не пролезть через тела тех, которые устроили "пробку" на входе в зал). Но интересные или очень интересные доклады, много обсуждений, новых идей. Встретил старых знакомых, это всегда приятно :) 
+
+
+
+Огранизационно всё было четко, понравился дизайн мелочей - бейджиков, шаблона презентаций и прочего - просто и со вкусом. В общем и целом - так держать, Олег ;)
+
+
+
+<!--more-->
+
+
+
+## Краткие тезисы
+
+
+
+Требуемое время: 50 минут 
+
+Докладчик: Андрей Смирнов
+
+
+
+Цель доклада – рассказать о проблемах кеширования в распределенных высоконагруженных проектах и о возможных путях решения этой проблемы. Предполагаемый уровень подготовки аудитории – начинающий++.
+
+
+
+Современный высоконагруженный проект может использовать десятки гигабайт распределенной памяти, используемой под кеш, организованной в виде кластера memcached-серверов. Зачем нужен memcached? Как работать с таким хранилищем, как распределить ключи по элементам кластера? Как назвать ключ, соответствующий кешу? Как обеспечить атомарность операций, “блокировки”?
+
+
+
+Как эффективно использовать такое хранилище? Как исключить возможность одновременного построения “тяжелых” кешей разными мордами? Как сбросить одновременно группу кешей? Как отлаживать (собирать статистику) о кешировании? Как работает slab-аллокатор? Для чего еще может быть полезен memcached в веб-проекте? 
+
+
+
+## Видео с конференции
+
+
+
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="400" height="330"><param name="movie" value="http://pics.smotri.com/scrubber_custom8.swf?file=v649374d232&amp;bufferTime=3&amp;autoStart=false&amp;str_lang=rus&amp;xmlsource=http%3A%2F%2Fpics.smotri.com%2Fcskins%2Fblue%2Fskin_color_black.xml&amp;xmldatasource=http%3A%2F%2Fpics.smotri.com%2Fskin_ng.xml"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="bgcolor" value="#ffffff"><embed src="http://pics.smotri.com/scrubber_custom8.swf?file=v649374d232&amp;bufferTime=3&amp;autoStart=false&amp;str_lang=rus&amp;xmlsource=http%3A%2F%2Fpics.smotri.com%2Fcskins%2Fblue%2Fskin_color_black.xml&amp;xmldatasource=http%3A%2F%2Fpics.smotri.com%2Fskin_ng.xml" quality="high" allowscriptaccess="always" allowfullscreen="true" wmode="window" width="400" height="330" type="application/x-shockwave-flash"></embed></object>
+
+
+
+## Презентация
+
+
+
+<object codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" id="doc_986704665618933" name="doc_986704665618933" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" align="middle" height="500" width="100%">		<param name="movie" value="http://documents.scribd.com/ScribdViewer.swf?document_id=6442228&amp;access_key=key-2gjlb75syn57xsue0rnj&amp;page=&amp;version=1&amp;auto_size=true&amp;viewMode="><param name="quality" value="high"><param name="play" value="true"><param name="loop" value="true"><param name="scale" value="showall"><param name="wmode" value="opaque"><param name="devicefont" value="false"><param name="bgcolor" value="#ffffff"><param name="menu" value="true"><param name="allowFullScreen" value="true"><param name="allowScriptAccess" value="always"><param name="salign" value=""><embed src="http://documents.scribd.com/ScribdViewer.swf?document_id=6442228&amp;access_key=key-2gjlb75syn57xsue0rnj&amp;page=&amp;version=1&amp;auto_size=true&amp;viewMode=" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" play="true" loop="true" scale="showall" wmode="opaque" devicefont="false" bgcolor="#ffffff" name="doc_986704665618933_object" menu="true" allowfullscreen="true" allowscriptaccess="always" salign="" type="application/x-shockwave-flash" align="middle" height="500" width="100%"></embed></object></p><div style="font-size:10px;text-align:center;width:100%"><a href="http://www.scribd.com/doc/6442228/Web-memcached">Web, кэширование и memcached</a> - <a href="http://www.scribd.com/upload">Upload a Document to Scribd</a></div>
+
+
+
+## Полный текст доклада
+
+
+
+<object codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" id="doc_902052781103987" name="doc_902052781103987" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" align="middle" height="500" width="700"> <param name="movie" value="http://documents.scribd.com/ScribdViewer.swf?document_id=7667009&amp;access_key=key-1ikhiaj4iruc95lho5as&amp;page=1&amp;version=1&amp;viewMode=list"><param name="quality" value="high"><param name="play" value="true"><param name="loop" value="true"><param name="scale" value="showall"><param name="wmode" value="opaque"><param name="devicefont" value="false"><param name="bgcolor" value="#ffffff"><param name="menu" value="true"><param name="allowFullScreen" value="true"><param name="allowScriptAccess" value="always"><param name="salign" value=""><param name="mode" value="list"><embed src="http://documents.scribd.com/ScribdViewer.swf?document_id=7667009&amp;access_key=key-1ikhiaj4iruc95lho5as&amp;page=1&amp;version=1&amp;viewMode=list" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" play="true" loop="true" scale="showall" wmode="opaque" devicefont="false" bgcolor="#ffffff" name="doc_902052781103987_object" menu="true" allowfullscreen="true" allowscriptaccess="always" salign="" type="application/x-shockwave-flash" align="middle" mode="list" height="500" width="700"></embed></object><div style="font-size:10px;text-align:center;width:700"><a href="http://www.scribd.com/doc/7667009/Web-Caching-and-Memcached">Web Caching and Memcached</a> - <a href="http://www.scribd.com/upload">Upload a Document to Scribd</a></div> 
+
+
+
+## Материалы
+
+
+ * Тезисы ([RTF](http://www.smira.ru/wp-content/uploads/2008/10/abstract.rtf))
+ * Презентация ([PowerPoint](http://www.smira.ru/wp-content/uploads/2008/10/dhndhudhdhudhndhndhny-dhdh-highload-2008.ppt))
+ * Полный текст доклада ([PDF](http://www.smira.ru/wp-content/uploads/2008/10/web-caching-and-memcached.pdf))</body></html>

@@ -1,0 +1,56 @@
+<html><body><p>Следующий забавный случай взаимодействия частей [Twisted Framework](http://twistedmatrix.com/) заставил меня потерять час времени, спешу рассказать, в надежде,
+что это спасет чьё-то время. Итак, в Twisted есть модуль логгинга, `twisted.python.log`, в котором есть удобный метод `log.err()`, который позволяет записать в лог информацию о текущем исключении. А `trial` - это framework для написания юнит-тестов из того же Twisted. Их сочетание иногда приводит к проблеме :)
+
+
+
+<!--more-->
+
+
+
+Итак, у меня был блок кода, похожий на пример ниже:
+
+
+
+</p><pre lang="python" line="1">
+
+from twisted.python import log
+
+
+
+def catcher(f):
+  try:
+    return f()
+  except GoodException:
+    return 'ERROR'
+  except:
+    log.err()
+    raise UnknownException
+</pre>
+
+
+
+По смыслу он должен был логировать все неожиданные исключения и заменять их на более разумные. Я написал юнит-тест на такую функцию примерно следующего вида:
+
+
+
+<pre lang="python" line="1">
+
+def testCatcher():
+  def raiseBadException():
+    assert False 
+  self.assertEquals('ERROR', catcher, raiseBadException)
+</pre>
+
+
+
+При запуске юнит-тест говорил, что он завершился с ошибкой, т.к. было выброшено исключение 
+
+`exceptions.AssertionError`, т.е. то исключение, которое генерирует строка 3 в тесте. Но ведь оно было поймано `catcher`? Я долго бился с этой ситуацией (на самом деле код был сложнее, но суть его от этого не менялась), пока не понял, что если из-под `trial` (запускальщика юнит-тестов) сделать `twisted.python.log.err`, то вместо того, чтобы вывести в лог исключение, он помечает тест как ошибочный, при этом в качестве причины ошибки выводит текущее исключение! То есть тест отрабатывал штатно, но `log.err()` мой помечал его как ошибочный.
+
+
+
+Вот такое вот не совсем очевидное взаимодействие...
+
+
+
+<b>Update</b>: на самом деле "правильный" способ это исправить - использовать [TestCase.flushLoggedErrors](http://twistedmatrix.com/documents/11.0.0/api/twisted.trial.unittest.TestCase.html#flushLoggedErrors). Спасибо [@paaleksey](http://twitter.com/#!/paaleksey) за наводку.</body></html>

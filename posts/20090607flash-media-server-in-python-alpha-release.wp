@@ -1,0 +1,100 @@
+<html><body><p>[fmspy]: http://fmspy.org/ "FMSPy"
+[rtmp]: http://ru.wikipedia.org/RTMP "RTMP"
+
+[netconnection]: http://livedocs.adobe.com/flash/9.0/ActionScriptLangRefV3/flash/net/NetConnection.html "NetConnection"
+
+[python]: http://www.python.org/ "Python"
+
+[so]: http://www.adobe.com/support/flash/action_scripts/actionscript_dictionary/actionscript_dictionary648.html "Shared Object"
+
+[twisted]: http://twistedmatrix.com/ "Twisted"
+
+[memcached]: http://www.smira.ru/tag/memcached "Memcached"
+
+[doc-install]: http://fmspy.org/manual/en/userguide.html#installation "FMSPy установка"
+
+[docs]: http://fmspy.org/wiki/Documentation
+
+
+
+<a href="/wp-content/uploads/2009/05/fmspy.png"><img src="/wp-content/uploads/2009/05/fmspy.png" alt="FMSPy" title="FMSPy" width="96" height="96" class="alignleft size-full wp-image-419"></a> [Flash Media Server written in Python][fmspy] ([FMSPy][fmspy]) - это *еще один* RTMP-сервер для приложений на Adobe Flash/Flex/Air. FMSPy является аналогом Adobe Flash Media Server, с гораздо меньшими возможностями, однако FMSPy  - совершенно бесплатный проект с открытым исходным кодом. Проект находится на ранней стадии развития, но в активной разработке.
+
+
+
+Итак, что есть на сегодняшний день:
+
+
+ * Реализация [RTMP][rtmp]-протокола: кодирование/декодирование пакетов, разрезание и склеивание из chunks и т.п.
+ * Поддержка базового RPC (Invoke) клиент-сервер и сервер-клиент. То есть из Flash-приложения можно вызывать с помощью класса [NetConnection][netconnection] методы приложения на стороне сервера, и наоборот со стороны сервера вызывать методы приложения.
+ * Инфраструктура для написания приложений (в качестве плагинов к FMSPy) со своим API на [Python][python].
+
+
+<!--more-->
+
+
+
+В ближайших релизах:
+
+
+ * Стриминг (вещание) с вебкамеры, стриминг видео/аудио с сервера (FLV, MP4, MP3).
+ * Поддержка серверных [Shared Object][so].
+ * Анализ загрузки, полуавтоматическая кластеризация для распределения нагрузки.
+
+
+[FMSPy][fmspy] написан на [Python][python] с использованием [Twisted Framework][twisted], приложения на FMSPy реализуются также на Python и им доступны все возможности, которые есть в Twisted: асинхронная сетевая модель, соединения с БД, [memcached][memcached], различные сервисы и т.п.
+
+
+
+## Запуск и установка
+
+
+
+Если у Вас уже установлен Python и setuptools (чаще всего на Unix/Linux это так), достаточно выполнить от имени root:
+
+
+    easy_install fmspy
+
+
+Easy_install автоматически установит все необходимые зависимости (если они еще не установлены). Более подробно об установке можно почитать в [документации][doc-install].
+
+
+
+После установки запуск в отладочном режиме (на консоли) осуществляется следующим образом:
+
+
+    twistd -n fmspy
+
+
+Для окончания работы сервера достаточно нажать Ctrl+C.
+
+
+
+## Примеры
+
+
+
+Вместе с FMSPy устанавливается два примера: эхотест и простенький чат. После запуска откройте страницу [http://localhost:3000/examples/](http://localhost:3000/examples/) и выберите интересующий вас. 
+
+
+
+<a href="/wp-content/uploads/2009/06/screenshot.png" target="_blank"><img src="http://www.smira.ru/wp-content/uploads/2009/06/screenshot-263x300.png" alt="echotest" title="echotest" width="263" height="300" class="alignleft size-medium wp-image-454"></a> <a href="/wp-content/uploads/2009/06/screenshot1.png" target="_blank"><img src="http://www.smira.ru/wp-content/uploads/2009/06/screenshot1-297x300.png" alt="chat" title="chat" width="297" height="300" class="alignleft size-medium wp-image-456"></a>
+
+
+
+## Вместо заключения
+
+
+
+Пробуйте, тестируйте, присоединяйтесь к разработке. Любая помощь приветствуется: написание документации, патчи, идеи новых фич, графические материалы! Все это лучше всего отправить в [трекер][fmspy].  
+
+
+
+Впереди новые релизы, также в ближайшее время статья о написании приложений для FMSPy.
+
+
+
+Ссылки:
+
+
+ * [Сайт проекта, трекер][fmspy]
+ * [Документация][docs]</p></body></html>

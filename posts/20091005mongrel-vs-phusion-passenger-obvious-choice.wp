@@ -1,0 +1,55 @@
+<html><body><p>Предыдущая конфигурация:
+
+ * [nginx][nginx] (главный proxy), который раздает трафик в
+ * [haproxy][haproxy] (ради возможности балансировать по нагрузке), который распределяет нагрузку по нескольким webapp-серверам
+ *  с 16-ю [mongrelами][mongrel] на каждом
+
+
+Проблемы:
+
+
+ 1. "Утекающая" память, периодический out of memory на серверах, лечится только перезапуском [mongrelов][mongrel].
+ 2. Запросы, занимающие десятки секунд из-за неверной балансировки (в нагруженный [mongrel][mongrel] все-таки попадает несколько "тяжелых" запросов).
+ 3. Сложность управления кластером монгрелов - постоянные проблемы при перезапуске, "не стартующие" [mongrelы][mongrel] и т.п.
+
+
+Новая конфигурация:
+
+
+ * [nginx][nginx] (proxy) остался
+ * [Phusion Passenger][passenger] + [Ruby Enterprise Edition][ree] на каждой машине.
+
+
+Результат:
+
+
+
+<img src="/wp-content/uploads/2009/10/webapp01-passenger-mongrel.png" alt="webapp01-passenger-mongrel" title="webapp01-passenger-mongrel" width="603" height="250" class="aligncenter size-full wp-image-508">
+
+
+
+Комментарий: переход на [Phusion Passenger][passenger] на Week 39, объем занятой памяти - это белая область на графике, растущая сверху вниз. До перехода на Passenger объем свободной памяти стремительно уменьшался, иногда доходя до нуля, после перехода остается более-менее стабильным. Использование CPU осталось на прежнем уровне (как и ожидалось).
+
+
+
+После перехода исчезли запросы, которые по непонятным причинам занимали десятки секунд - время выполнения коррелирует со сложностью запроса.
+
+
+
+Так что если вы еще не переключились, мы идем к вам :)
+
+
+
+P.S. Отдельное спасибо [glebpom](http://github.com/glebpom) за подсказку.
+
+
+
+[passenger]: http://www.modrails.com/ 
+
+[ree]: http://www.rubyenterpriseedition.com/
+
+[mongrel]: http://mongrel.rubyforge.org/
+
+[nginx]: http://sysoev.ru/nginx/
+
+[haproxy]: http://haproxy.1wt.eu/</p></body></html>

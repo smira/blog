@@ -1,0 +1,86 @@
+<html><body><p>22-23 сентября в Москве состоялась конференция [РИТ: Высокие нагрузки](http://highload.info/). На ней я представил доклад "Доставка видеоконтента пользователям" (доклад строился на нашем опыте в [NetStream](http://netstream.ru/) по проектированию [Smotri.Com](http://smotri.com)).
+
+
+Ниже вы найдете краткие тезисы доклады, полные тезисы, презентацию, а также видео с конференции.
+
+
+
+<!--more-->
+
+
+
+## Краткие тезисы
+
+
+
+<strong>Цель доклада</strong>: познакомить аудиторию с возможными способами организации отдачи статического контента (видеофайлы) и «живых» потоков вещания в условиях высокой нагрузки и географической распределенности.
+
+
+
+<strong>Аудитория доклада</strong>: уровень — средний, может быть интересно широкому классу специалистов.
+
+
+
+<strong>Постановка проблемы:</strong> 
+
+Просмотр видео на сайте Flash-видеохостинга требует отдачи с кластера файловых серверов большого количества FLV-файлов значительно размера. Просмотр видео критичен к пропускной способности сети, поэтому файлы должны располагаться как можно ближе к пользователям (географическая распределенность). Организация вещания (трансляции) с большим количеством зрителей также требует географической распределенности, в то же время обработка большого количества подключенных пользователей к одному вещанию требует ретрансляции вещаний (одного сервера недостаточно).
+
+
+
+<strong>Основные вопросы:</strong>
+
+
+
+1. Организация файлового хранилища: доступ к серверам, мониторинг, бэкап данных.
+
+2. Настройка сервера для FLV-стриминга.
+
+3. Географическая распределенность (зеркала) «своими руками»: концепция и её реализация.
+
+4. Применение географической распределенности к файлам видео.
+
+5. Организация вещаний (трансляций), вещания с большим числом зрителей, ретрансляция. Оптимизация сервера вещаний.
+
+6. Применение географической распределенности к вещаниям.
+
+
+
+<strong>Оценка значимости и области применимости:</strong>
+
+Данные вопросы интересны как для видеохостинга, так и для произвольных вариантов вещаний через Internet (например, групповые видеочаты). Схожие проблемы могут возникать у любых ресурсов, имеющих контент довольно большого размера и требующих «быстрой» отдачи их пользователям (например, файлохранилища).
+
+Описываемое решение не является полностью уникальным, существуют другие более общие решения для части проблем, например, для файлов это GFS, концепция CDN и т.п. Для вещаний, насколько я знаю, подобные вопросы обсуждаются впервые.
+
+
+
+## Видео с конференции
+
+
+
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" width="400" height="330"><param name="movie" value="http://pics.smotri.com/scrubber_custom8.swf?file=v634534991d&amp;bufferTime=3&amp;autoStart=false&amp;str_lang=rus&amp;xmlsource=http%3A%2F%2Fpics.smotri.com%2Fcskins%2Fblue%2Fskin_color_black.xml&amp;xmldatasource=http%3A%2F%2Fpics.smotri.com%2Fskin_ng.xml"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="true"><param name="bgcolor" value="#ffffff"><embed src="http://pics.smotri.com/scrubber_custom8.swf?file=v634534991d&amp;bufferTime=3&amp;autoStart=false&amp;str_lang=rus&amp;xmlsource=http%3A%2F%2Fpics.smotri.com%2Fcskins%2Fblue%2Fskin_color_black.xml&amp;xmldatasource=http%3A%2F%2Fpics.smotri.com%2Fskin_ng.xml" quality="high" allowscriptaccess="always" allowfullscreen="true" wmode="window" width="400" height="330" type="application/x-shockwave-flash"></embed></object>
+
+
+
+## Презентация
+
+
+
+<object codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" id="doc_200464541682834" name="doc_200464541682834" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" align="middle" height="500" width="100%">		<param name="movie" value="http://documents.scribd.com/ScribdViewer.swf?document_id=6285268&amp;access_key=key-6btipn6gd90fp8tazii&amp;page=&amp;version=1&amp;auto_size=true&amp;viewMode="><param name="quality" value="high"><param name="play" value="true"><param name="loop" value="true"><param name="scale" value="showall"><param name="wmode" value="opaque"><param name="devicefont" value="false"><param name="bgcolor" value="#ffffff"><param name="menu" value="true"><param name="allowFullScreen" value="true"><param name="allowScriptAccess" value="always"><param name="salign" value=""><embed src="http://documents.scribd.com/ScribdViewer.swf?document_id=6285268&amp;access_key=key-6btipn6gd90fp8tazii&amp;page=&amp;version=1&amp;auto_size=true&amp;viewMode=" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" play="true" loop="true" scale="showall" wmode="opaque" devicefont="false" bgcolor="#ffffff" name="doc_200464541682834_object" menu="true" allowfullscreen="true" allowscriptaccess="always" salign="" type="application/x-shockwave-flash" align="middle" height="500" width="100%"></embed></object></p><div style="font-size:10px;text-align:center;width:100%"><a href="http://www.scribd.com/doc/6285268/-2008">презентация на РИТ Высокие нагрузки - 2008</a> - <a href="http://www.scribd.com/upload">Upload a Document to Scribd</a></div>
+
+
+
+## Полный текст доклада
+
+
+
+<a title="View Доставка видеоконтента пользователям document on Scribd" href="http://www.scribd.com/doc/8587493/-" style="margin: 12px auto 6px auto; font-family: Helvetica,Arial,Sans-serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 14px; line-height: normal; font-size-adjust: none; font-stretch: normal; -x-system-font: none; display: block; text-decoration: underline;">Доставка видеоконтента пользователям</a> <object codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" id="doc_492526224648429" name="doc_492526224648429" classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" align="middle" height="500" width="650"> <param name="movie" value="http://documents.scribd.com/ScribdViewer.swf?document_id=8587493&amp;access_key=key-29vnkm8ulowt3jo2vb2c&amp;page=1&amp;version=1&amp;viewMode=list"><param name="quality" value="high"><param name="play" value="true"><param name="loop" value="true"><param name="scale" value="showall"><param name="wmode" value="opaque"><param name="devicefont" value="false"><param name="bgcolor" value="#ffffff"><param name="menu" value="true"><param name="allowFullScreen" value="true"><param name="allowScriptAccess" value="always"><param name="salign" value=""><param name="mode" value="list"><embed src="http://documents.scribd.com/ScribdViewer.swf?document_id=8587493&amp;access_key=key-29vnkm8ulowt3jo2vb2c&amp;page=1&amp;version=1&amp;viewMode=list" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" play="true" loop="true" scale="showall" wmode="opaque" devicefont="false" bgcolor="#ffffff" name="doc_492526224648429_object" menu="true" allowfullscreen="true" allowscriptaccess="always" salign="" type="application/x-shockwave-flash" align="middle" mode="list" height="500" width="650"></embed></object> <div style="margin: 6px auto 3px auto; font-family: Helvetica,Arial,Sans-serif; font-style: normal; font-variant: normal; font-weight: normal; font-size: 12px; line-height: normal; font-size-adjust: none; font-stretch: normal; -x-system-font: none; display: block;"> <a href="http://www.scribd.com/upload" style="text-decoration: underline;">Publish at Scribd</a> or <a href="http://www.scribd.com/browse" style="text-decoration: underline;">explore</a> others: <a href="http://www.scribd.com/browse?c=119-internet" style="text-decoration: underline;">Internet</a> <a href="http://www.scribd.com/browse?c=114-technology" style="text-decoration: underline;">Technology</a> </div>
+
+
+
+## Материалы
+
+
+ * <a href="/wp-content/uploads/2008/09/abstract.odt">Эти же тезисы</a> (OpenDocument)
+ * <a href="/wp-content/uploads/2008/09/dhndhudhdhudhndhndhny-dhdh-dhdhdhc-dhnnfdhdhdhdhu-dhdhdhnnfdhdhdh-2008.ppt">Презентация на РИТ: Высокие нагрузки (2008)</a> (PowerPoint)
+ * <a href="/wp-content/uploads/2008/12/video.pdf">Полный текст доклада</a> (PDF)
+</body></html>

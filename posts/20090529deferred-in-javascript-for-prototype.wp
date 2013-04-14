@@ -1,0 +1,104 @@
+<html><body><img src="/wp-content/uploads/2009/05/prototype_twisted.png" alt="Prototype and Twisted" title="Prototype and Twisted" width="200" height="200" class="alignleft size-full wp-image-410">
+
+
+[Продолжая](http://www.smira.ru/2008/11/01/open-source-deferred-qooxdoo/) тему [Deferred](http://twistedmatrix.com/projects/core/documentation/howto/async.html) для JavaScript предлагаю еще одно переписывание Deferred, теперь в терминах [Prototype](http://www.prototypejs.org/). Подробнее о самом Deferred можно почитать в двух моих прошлых заметках: [Асинхронное программирование: концепция Deferred](http://www.smira.ru/2009/02/10/deferred-async-programming/) и [Deferred: все подробности](http://www.smira.ru/2009/02/24/more-about-deferred/). Если кратко, самое распространенное и полезное применение Deferred в JavaScript - это работа с AJAX или другими RPC-over-HTTP вызовами, когда необходимо совершить цепочку логически связанных вызовов, корректно обрабатывать возникающие ошибки и т.п. С моей точки зрения, Deferred крайне необходим в таких ситуациях.
+
+
+
+Перейдем к примерам: обращение к некоторому JSON-RPC API на основе Prototype'овского [Ajax.Request](http://www.prototypejs.org/api/ajax/request) можеть быть обернуто в Deferred следующим образом:
+
+
+
+<!--more-->
+
+
+
+<pre lang="javascript">
+
+var Api = Class.create({
+    initialize : function(url)
+    {
+        this.url = url;
+    },
+
+    call : function(method, params)
+    {
+        var requestBody = $H({ 'method' : method, 'params' : params }).toJSON();
+        var d = new Deferred();
+
+        var onSuccess = function(transport)
+        {
+            result = transport.responseText.evalJSON();
+            if ('faultCode' in result &amp;&amp; 'faultString' in result)
+            {
+                var err = new Error(result.faultString);
+                err.faultCode = result.faultCode;
+                err.faultString = result.faultString;
+                d.errback(err);
+            }
+            else
+            {
+                result = result[0];
+                console.log("Got result: ", result);
+                d.callback(result);
+            }
+        };
+
+        var onFailure = function(transport)
+        {
+            d.errback(new Error("API transport error: " + transport.status))
+        };
+
+        var onException = function(error)
+        {
+            d.errback(error);
+        }
+
+        new Ajax.Request(this.url, {
+                method : 'post',
+                postBody : requestBody,
+                requestHeaders : { 'Content-Type' : 'application/json' },
+                onSuccess : onSuccess,
+                onFailure : onFailure,
+                onException : onException,
+            });
+
+        return d;
+    },
+});
+
+</pre>
+
+
+
+Здесь любое обращение к `Api.call` будет возвращать новый Deferred, который будет содержать результат удаленного вызова либо исключение (транспортное или от сервера, к которому мы обращаемся). Пусть есть RPC-вызовы `sum` и `mult`, которые, соответственно, складывают и перемножают свои аргументы. Тогда вычисление выражения `(2+3)*7` с использованием нашего класса `Api` будет выглядеть так:
+
+
+
+<pre lang="javascript">
+  var api = new Api;
+  api.call('sum', [2, 3])
+     .addCallback(
+               function (sum_of_2_and_3) 
+               { 
+                     return api.call('mult', [sum_of_2_and_3, 7]); 
+               })
+     .addCallback(
+               function(result)
+               { 
+                     alert('(2+3)*7 = ' + result); 
+               })
+     .addErrback(
+              function (error) 
+              { 
+                     alert('Mmm.. something wrong happened: ' + error); 
+              });
+</pre>
+
+
+
+Ну и самое главное: 
+
+
+ * исходный код <a href="/wp-content/uploads/2009/05/deferred.js">Deferred.js</a>;
+ * лицензия MIT, как и у самого [первого варианта Deferred для JavaScript](http://mochikit.com/doc/html/MochiKit/Async.html).</body></html>

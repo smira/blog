@@ -1,0 +1,47 @@
+<html><body><p>Что выведет данный код?
+
+    #include <stdio.h>
+
+    struct A
+    {
+        A(int x = 3) { printf("%d\n", x); }
+    };
+
+    struct B: virtual public A
+    {
+       B() : A(4) {}
+    }; 
+
+
+
+    struct C: virtual public A
+    {
+      C() : A(5) { }
+    }; 
+
+    struct D: public B, public C
+    {
+
+    };
+
+    int main()
+    {
+        D d;
+        B b;
+        C c;
+
+        return 0;
+    }
+
+
+Ответ:
+
+
+    3
+    4
+    5
+
+
+Что самое смешное, можно из `D::D()` явно вызвать конструктор `A` с другим параметром. Наслаждаемся в C++ смесью виртуального наследования, раздельной компиляции и полученной кривости.
+
+</stdio.h></p></body></html>
