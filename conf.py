@@ -90,6 +90,7 @@ SIDEBAR_LINKS = {
 
 post_pages = (
             ("posts/*.wp", "posts", "post.tmpl", True),
+            ("posts/*.rst", "posts", "post.tmpl", True),
             ("stories/*.wp", "stories", "story.tmpl", False),
         )
 
