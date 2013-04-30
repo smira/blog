@@ -171,7 +171,7 @@ REDIRECTIONS = [(u'2006/07/16/duo/index.html', u'/posts/20060716duo.html'), (u'2
 # "rsync -rav output/* joe@my.site:/srv/www/site"
 # And then do a backup, or ping pingomatic.
 # To do manual deployment, set it to []
-# DEPLOY_COMMANDS = []
+DEPLOY_COMMANDS = ["rsync -vap output/ smira.ru@smira.ru:content/"]
 
 # Where the output site should be located
 # If you don't use an absolute path, it will be considered as relative
