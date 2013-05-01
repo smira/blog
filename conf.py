@@ -200,9 +200,14 @@ DEPLOY_COMMANDS = ["rsync -vap output/ smira.ru@smira.ru:content/"]
 # argument.
 #
 # By default, there are no filters.
-# FILTERS = {
-#    ".jpg": ["jpegoptim --strip-all -m75 -v %s"],
-# }
+
+from nikola import filters
+
+FILTERS = {
+    ".jpg": ["jpegoptim --strip-all -m75 -v %s"],
+    ".css": [filters.yui_compressor],
+    ".js": [filters.yui_compressor],
+}
 
 # Create a gzipped copy of each generated file. Cheap server-side optimization.
 # GZIP_FILES = False
