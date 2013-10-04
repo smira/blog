@@ -13,7 +13,7 @@ BLOG_AUTHOR = "Андрей"
 BLOG_TITLE = "Блог Андрея Смирнова"
 # This is the main URL for your site. It will be used
 # in a prominent link
-SITE_URL = "http://www.smira.ru"
+SITE_URL = "http://www.smira.ru/"
 # This is the URL where nikola's output will be deployed.
 # If not set, defaults to SITE_URL
 # BASE_URL = "http://www.smira.ru"
@@ -53,7 +53,7 @@ TRANSLATIONS = {
 
 # Links for the sidebar / navigation bar.
 # You should provide a key-value pair for each used language.
-SIDEBAR_LINKS = {
+NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ('/archive.html', 'Archives'),
         ('/categories/index.html', 'Tags'),
@@ -88,12 +88,14 @@ SIDEBAR_LINKS = {
 # rss feeds.
 #
 
-post_pages = (
-            ("posts/*.wp", "posts", "post.tmpl", True),
-            ("posts/*.rst", "posts", "post.tmpl", True),
-            ("stories/*.wp", "stories", "story.tmpl", False),
-        )
-
+POSTS = (
+    ("posts/*.wp", "posts", "post.tmpl"),
+    ("posts/*.rst", "posts", "post.tmpl"),
+)
+PAGES = (
+    ("stories/*.txt", "stories", "story.tmpl"),
+    ("stories/*.rst", "stories", "story.tmpl"),
+)
 # One or more folders containing files to be copied as-is into the output.
 # The format is a dictionary of "source" "relative destination".
 # Default is:
@@ -107,7 +109,7 @@ post_pages = (
 # 'rest' is reStructuredText
 # 'markdown' is MarkDown
 # 'html' assumes the file is html and just copies it
-post_compilers = {
+COMPILERS = {
         "rest": ('.txt', '.rst'),
         "markdown": ('.md', '.mdown', '.markdown', '.wp'),
         "html": ('.html', '.htm')
@@ -283,7 +285,7 @@ CONTENT_FOOTER = CONTENT_FOOTER.format(email=BLOG_EMAIL,
 # http://disqus.com, and set DISQUS_FORUM to the short name you selected.
 # If you want to disable comments, set it to False.
 # Default is "nikolademo", used by the demo sites
-DISQUS_FORUM = "smira"
+COMMENT_SYSTEM_ID = "smira"
 
 # Create index.html for story folders?
 # STORY_INDEX = False
@@ -318,7 +320,7 @@ DISQUS_FORUM = "smira"
 
 # Enable Addthis social buttons?
 # Defaults to true
-ADD_THIS_BUTTONS = False
+SOCIAL_BUTTONS_CODE = ''
 
 # Modify the number of Post per Index Page
 # Defaults to 10
