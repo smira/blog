@@ -2,3 +2,5 @@
 output/
 cache/
 .doit.db
+env/
+*.sublime-*
