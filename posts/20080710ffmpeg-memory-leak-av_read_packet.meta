@@ -1,6 +1,6 @@
 ffmpeg: "утечка" памяти (av_read_packet)
 20080710ffmpeg-memory-leak-av_read_packet
 2008-07-10 19:25:30
-C++,ffmpeg,Smotri.Com,Разработка,утечка
+разработка,smotri.com,ffmpeg,C++,утечка
 
 
