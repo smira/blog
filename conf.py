@@ -371,7 +371,7 @@ SOCIAL_BUTTONS_CODE = ''
 # EXTRA_HEAD_DATA = ""
 # Google analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).
-ANALYTICS = """
+BODY_END = """
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
