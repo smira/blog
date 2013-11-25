@@ -1,4 +1,3 @@
-
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 import time
@@ -320,7 +319,19 @@ COMMENT_SYSTEM_ID = "smira"
 
 # Enable Addthis social buttons?
 # Defaults to true
-SOCIAL_BUTTONS_CODE = ''
+SOCIAL_BUTTONS_CODE = """
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_floating_style addthis_32x32_style" style="left:50px;top:50px;">
+<a class="addthis_button_preferred_1"></a>
+<a class="addthis_button_preferred_2"></a>
+<a class="addthis_button_preferred_3"></a>
+<a class="addthis_button_preferred_4"></a>
+<a class="addthis_button_compact"></a>
+</div>
+<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-529316993671801f"></script>
+<!-- AddThis Button END -->
+"""
 
 # Modify the number of Post per Index Page
 # Defaults to 10
