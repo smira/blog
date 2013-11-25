@@ -437,7 +437,7 @@ BODY_END = """
 # If you want to use formatted post time in W3C-DTF Format(ex. 2012-03-30T23:00:00+02:00),
 # set timzone if you want a localized posted date.
 #
-# TIMEZONE = 'Europe/Zurich'
+TIMEZONE = 'Europe/Moscow'
 
 # If webassets is installed, bundle JS and CSS to make site loading faster
 USE_BUNDLES = True
