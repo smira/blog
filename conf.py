@@ -54,8 +54,10 @@ TRANSLATIONS = {
 # You should provide a key-value pair for each used language.
 NAVIGATION_LINKS = {
     DEFAULT_LANG: (
-        ('/archive.html', 'Archives'),
-        ('/categories/index.html', 'Tags'),
+        ('https://github.com/smira', 'GitHub'),
+        ('https://twitter.com/smira', 'Twitter'),
+        ('/archive.html', 'Архив'),
+        ('/categories/index.html', 'Тэги'),
         ('/rss.xml', 'RSS'),
     ),
 }
@@ -205,7 +207,7 @@ DEPLOY_COMMANDS = ["rsync -vap output/ smira.ru@smira.ru:content/"]
 from nikola import filters
 
 FILTERS = {
-    ".jpg": ["jpegoptim --strip-all -m75 -v %s"],
+    ".jpg": ["jpegoptim.fix --strip-all -m75 -v -p %s"],
     ".css": [filters.yui_compressor],
     ".js": [filters.yui_compressor],
 }
