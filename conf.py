@@ -8,8 +8,8 @@ import time
 
 
 # Data about this site
-BLOG_AUTHOR = "Андрей"
-BLOG_TITLE = "Блог Андрея Смирнова"
+BLOG_AUTHOR = "Andrey"
+BLOG_TITLE = "Andrey Smirnov's Blog"
 # This is the main URL for your site. It will be used
 # in a prominent link
 SITE_URL = "http://www.smira.ru/"
@@ -46,6 +46,7 @@ DEFAULT_LANG = "ru"
 # the path will be used as a prefix for the generated pages location
 TRANSLATIONS = {
     DEFAULT_LANG: "",
+    "en": "./en",
     # Example for another language:
     # "es": "./es",
 }
@@ -59,6 +60,14 @@ NAVIGATION_LINKS = {
         ('/cv.pdf', 'Резюме'),
         ('/archive.html', 'Архив'),
         ('/categories/index.html', 'Тэги'),
+        ('/rss.xml', 'RSS'),
+    ),
+    "en": (
+        ('https://github.com/smira', 'GitHub'),
+        ('https://twitter.com/smira', 'Twitter'),
+        ('/cv-eng.pdf', 'Résumé'),
+        ('/archive.html', 'Archive'),
+        ('/categories/index.html', 'Tags'),
         ('/rss.xml', 'RSS'),
     ),
 }
