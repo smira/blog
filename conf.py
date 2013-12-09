@@ -56,6 +56,7 @@ NAVIGATION_LINKS = {
     DEFAULT_LANG: (
         ('https://github.com/smira', 'GitHub'),
         ('https://twitter.com/smira', 'Twitter'),
+        ('/cv.pdf', 'Резюме'),
         ('/archive.html', 'Архив'),
         ('/categories/index.html', 'Тэги'),
         ('/rss.xml', 'RSS'),
