@@ -1,0 +1,17 @@
+.. link:
+.. description:
+.. tags:
+.. date: 2013/12/10 16:44:14
+.. title: Budapest Devops Meetup Nov 18, 2013
+.. slug: budapest-devops-meetup
+
+I've neen invited to join Budapest Devops Meetup by `Péter Halácsy <http://prezi.com/about/peter-halacsy/>`_ and `Gábor Vészi <http://prezi.com/about/gabor-veszi/>`_. I've been talking about DevOps transformation in Qik, how different teams were successful or not in changing the way the deployment and infrastructure changes are handled. I've presented the challenges they faced with monitoring, implementing DRY principle, making teams truly cross-functional and DevOps.Dev and Ops in huge organizations like Skype.
+
+Presentation is available in `PDF </BPMeetup181013.pdf>`_.
+
+.. TEASER_END
+
+.. raw:: html
+
+    <iframe width="720" height="572" src="http://www.ustream.tv/embed/recorded/40890811?v=3&amp;wmode=direct" scrolling="no" frameborder="0" style="border: 0px none transparent;">    </iframe>
+    <br /><a href="http://www.ustream.tv/" style="padding: 2px 0px 4px; width: 400px; background: #ffffff; display: block; color: #000000; font-weight: normal; font-size: 10px; text-decoration: underline; text-align: center;" target="_blank">Video streaming by Ustream</a>
