@@ -1,0 +1,34 @@
+.. link:
+.. description:
+.. tags: aptly, devops
+.. date: 2014/02/10 23:20:40
+.. title: aptly 0.3
+.. slug: aptly-03
+
+Today I've released `aptly <http://www.aptly.info/>`_ version 0.3. It's the first version I would recommend for production usage.
+Please `download it <http://www.aptly.info/#download>`_ or install from `source <https://github.com/smira/aptly>`_,
+`raise issues <https://github.com/smira/aplty/issues>`_, disscuss in
+`aptly-discuss group <https://groups.google.com/forum/#!forum/aptly-discuss>`_, follow `me (@smira) <https://twitter.com/smira/>`_
+to get information about updates.
+
+New features:
+
+* using `aptly serve <http://www.aptly.info/#aptly-serve>`_ command you can quickly serve your published repositories over HTTP,
+  aptly would even advise right settings for apt sources;
+* aptly checks signatures and verifies checksums for downloaded files while mirroring remote repositories, if you don't have
+  key that was used to sign the mirror in your trusted GnuPG keychain, aptly would give some hints,
+  `some hints <http://www.aptly.info/#aptly-mirror-create>`_;
+* flat format of Debian repositories is now supported (e.g. `OBS <https://build.opensuse.org>`_ creates repositories in such format);
+* now you can drop `mirrors <http://www.aptly.info/#aptly-mirror-drop>`_ and
+  `snapshots <http://www.aptly.info/#aptly-snapshot-drop>`_;
+* aptly can `draw graph of relationships <http://www.aptly.info/#aptly-graph>`_ between your mirros, snapshots and published
+  repositories;
+* `bash completion <https://github.com/aptly-dev/aptly-bash-completion>`_ is available for aptly, try it out, it's amazing!
+* aptly gained ability to `create empty snapshot <http://www.aptly.info/#aptly-snapshot-create>`_, it could be useful if you'd
+  like to extract part of repository by `pulling <http://www.aptly.info/#aptly-snapshot-pull>`_ packages;
+* custom config location could be given with flag ``-config``.
+
+Nice picture (actually it's output of `aptly graph <http://www.aptly.info/#aptly-graph>`_ command):
+
+.. image:: /galleries/aptlygraph.png
+    :alt: output of aptly graph command
