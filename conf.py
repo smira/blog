@@ -340,7 +340,6 @@ SOCIAL_BUTTONS_CODE = """
 <a class="addthis_button_preferred_4"></a>
 <a class="addthis_button_compact"></a>
 </div>
-<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-529316993671801f"></script>
 <!-- AddThis Button END -->
 """
@@ -399,6 +398,7 @@ BODY_END = """
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-6065617-1']);
+  _gaq.push(['_trackPageview']);
 
   (function() {
     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
