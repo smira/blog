@@ -1,3 +1,7 @@
 img.presentation {
     border: 1px dashed gray;
 }
+
+#sharing-links {
+  line-height: 10px;
+}

@@ -332,16 +332,29 @@ COMMENT_SYSTEM_ID = "smira"
 # Enable Addthis social buttons?
 # Defaults to true
 SOCIAL_BUTTONS_CODE = """
-<!-- AddThis Button BEGIN -->
-<div class="addthis_toolbox addthis_floating_style addthis_32x32_style" style="left:50px;top:50px;">
-<a class="addthis_button_preferred_1"></a>
-<a class="addthis_button_preferred_2"></a>
-<a class="addthis_button_preferred_3"></a>
-<a class="addthis_button_preferred_4"></a>
-<a class="addthis_button_compact"></a>
-</div>
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-529316993671801f"></script>
-<!-- AddThis Button END -->
+<script type="text/javascript">
+(function(doc, script) {
+  var js,
+      fjs = doc.getElementsByTagName(script)[0],
+      frag = doc.createDocumentFragment(),
+      add = function(url, id) {
+          if (doc.getElementById(id)) {return;}
+          js = doc.createElement(script);
+          js.src = url;
+          id && (js.id = id);
+          frag.appendChild( js );
+      };
+
+    // Google+ button
+    add('http://apis.google.com/js/plusone.js');
+    // Facebook SDK
+    add('//connect.facebook.net/en_US/all.js#xfbml=1', 'facebook-jssdk');
+    // Twitter SDK
+    add('//platform.twitter.com/widgets.js');
+
+    fjs.parentNode.insertBefore(frag, fjs);
+}(document, 'script'));
+</script>
 """
 
 # Modify the number of Post per Index Page
