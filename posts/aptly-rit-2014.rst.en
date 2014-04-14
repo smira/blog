@@ -1,0 +1,35 @@
+.. title: aptly: Call for Help
+.. slug: aptly-rit-2014
+.. date: 2014/04/14 23:41:26
+.. tags: aptly
+.. link:
+.. description:
+.. type: text
+
+In Russian version of this blog there's a post about my talk on `aptly <http://www.aptly.info>`_
+at one of the conferences in Moscow. As this won't be that interesting for my non-Russian friends
+and it isn't significantly different from
+`my previous talk </posts/aptly-02-moscow-devops-meetup.html>`, I decided to call for your help
+with aptly documentation.
+
+As I'm not native English speaker, could you please help me to fix my bad English in two places:
+
+* `aptly source code <https://github.com/smira/aptly>`_, inline command help (manual page is generated
+  from these descriptions as well). Command help is located in files inside ``cmd/`` directory, e.g.
+  https://github.com/smira/aptly/blob/master/cmd/snapshot_pull.go. Usually it's at the bottom of the
+  file in function with name like ``makeCmdSnapshotPull``.
+* `aptly website <https://github.com/aptly-dev/aptly-dev.github.io>`_: it is static HTML, documentation
+  is in ``index.html``.
+
+Please fork and submit pull requests. For website, please submit pull requests against ``develop`` branch.
+
+Thanks in advance!
+
+P.S. As `PackageCloud <https://packagecloud.io>`_ has launched, what do you think about aptly launching
+as a paid service in the cloud with:
+
+* API
+* Package Storage
+* Web UI
+* All current features of aptly, including mirroring, snapshotting and local repositories?
+
