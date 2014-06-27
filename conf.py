@@ -9,7 +9,7 @@ import time
 
 # Data about this site
 BLOG_AUTHOR = "Andrey"
-BLOG_TITLE = "Andrey Smirnov's Blog"
+BLOG_TITLE = {"en": "Andrey Smirnov's Blog", "ru": "Блог Андрея Смирнова"}
 # This is the main URL for your site. It will be used
 # in a prominent link
 SITE_URL = "http://www.smira.ru/"
