@@ -19,6 +19,8 @@ SITE_URL = "http://www.smira.ru/"
 BLOG_EMAIL = "Smirnov.Andrey@gmail.com"
 BLOG_DESCRIPTION = "None"
 
+TRANSLATIONS_PATTERN = "{path}.{ext}.{lang}"
+
 # Nikola is multilingual!
 #
 # Currently supported languages are:
