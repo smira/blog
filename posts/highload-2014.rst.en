@@ -1,0 +1,25 @@
+.. title: HighLoad++-2014
+.. slug: highload-2014
+.. date: 2014-11-22 20:41:39 UTC+03:00
+.. tags: highload
+.. link:
+.. description:
+.. type: text
+
+At one of the biggest russian tech conferences `Highload++-2014 <http://highload.ru/>`_ I've been giving
+two talks (both in Russian):
+
+"Applications under load": on the common things in development of client-side applications and backend services,
+problems of communication, network and so on:
+
+.. raw:: html
+
+    <iframe src="//www.slideshare.net/slideshow/embed_code/41040323" width="595" height="385" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+
+Second talk, "Anatomy of web-service", was about multitasking, network IO and architecture of web server: how these
+things affect performance of web application:
+
+
+.. raw:: html
+
+    <iframe src="//www.slideshare.net/slideshow/embed_code/41040324" width="595" height="385" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
