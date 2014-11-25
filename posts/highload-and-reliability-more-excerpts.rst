@@ -1,7 +1,7 @@
 .. title: Мастер-класс: высокие нагрузки и надежность
 .. slug: highload-and-reliability-more-excerpts
 .. date: 2014/04/24 23:30:49
-.. tags: highload, разработка
+.. tags: highload, разработка, мастер-класс
 .. link:
 .. description:
 .. type: text

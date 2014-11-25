@@ -1,7 +1,7 @@
 .. title: Отзывы на мастер-класс
 .. slug: training-feedback
 .. date: 2014/06/09 23:32:33
-.. tags: highload, разработка, рит
+.. tags: highload, разработка, рит, мастер-класс
 .. link:
 .. description:
 .. type: text

@@ -1,7 +1,7 @@
 .. title: Мастер-класс про высокие нагрузки и надежность: второй заход
 .. slug: highload-reliability-training-july
 .. date: 2014/05/17 00:34:18
-.. tags: highload, разработка, рит
+.. tags: highload, разработка, рит, мастер-класс
 .. link:
 .. description:
 .. type: text
