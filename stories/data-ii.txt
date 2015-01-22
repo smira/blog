@@ -30,7 +30,7 @@
 
 После установки Docker необходимо скачать контейнер с заданиями (800-900Мб)::
 
-    docker pull smira/hl-tasks
+    docker pull smira/hl-tasks:base
 
 В этом вебинаре было 3 задания:
 
