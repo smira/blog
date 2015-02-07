@@ -1,0 +1,51 @@
+.. title: Вебинар №5. Архитектура
+.. slug: architecture
+.. date: 2015-02-02 17:50:57 UTC+03:00
+.. tags:
+.. link:
+.. description:
+.. type: text
+
+Добро пожаловать на страницу четвертого вебинара из серии
+`"Разработка надёжных высоконагруженных систем" <http://smira-webinar.highload.ru/>`_!
+
+На этой странице вы найдете ссылки и информацию обо всех заданиях.
+
+Тест
+----
+
+После вебинара Вы можете пройти небольшой тест для лучшего запоминания
+полученной информации. Прохождение теста не является обязательным. В
+ответ на почту будут отправлены результаты тесты и мои комментарии.
+
+Итак, `тест по итогам вебинара №5 <https://docs.google.com/forms/d/1J62m5fpARcoGwN7rLqg8Qs0eEXkXy-hqlH2wZqU6y8w/viewform>`_.
+
+
+Практические задания
+--------------------
+
+Для выполнения практических заданий необходимо `установить Docker <https://docs.docker.com/installation/#installation>`_.
+Для Windows/Mac OS X будет установлена отдельная виртуальная машина с Linux, для Linux доступна
+установка в рамках существующей OS.
+
+После установки Docker необходимо скачать контейнер с заданиями (800-900Мб)::
+
+    docker pull smira/hl-tasks:base
+
+В этом вебинаре было 1 задание:
+
+1. `попробуем ØMQ на практике! <https://github.com/smira/hl-tasks/blob/task-zmq/description.pdf?raw=true>`_
+
+Отзывы, общение
+---------------
+
+Для общения со мной и другими участниками мастер-класса вы можете использовать:
+
+* `Skype <skype:?chat&blob=fPEehEVaUmKQgA4mCBX_uyEQfbgEqn7dz5g6CGUTYo-xttgr5He0F1SlGOYlk8fq5FnRG1n6Ak6kqw>`_
+* `Gitter.im-чат <https://gitter.im/smira/highload-workshop>`_
+
+Вы можете написать мне отзывы или вопросы с помощью:
+
+* e-mail `me@smira.ru <mailto:me@smira.ru>`_
+* Twitter `@smira <https://twitter.com/smira>`_
+
